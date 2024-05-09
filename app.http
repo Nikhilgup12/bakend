@@ -1,0 +1,19 @@
+POST http://localhost:3000/register
+Content-type:application/json 
+
+{
+  "id": 1,
+  "username": "adam_richardd",
+  "email": "nikhil@gmail.com",
+  "password": "richard_567",
+} 
+
+### 
+
+POST http://localhost:3000/login
+Content-type:application/json 
+
+{
+  "username": "adam_richardd",
+  "password": "richard_567"
+}
