@@ -2,10 +2,10 @@ POST http://localhost:3000/register
 Content-type:application/json 
 
 {
-  "id": 1,
-  "username": "adam_richardd",
+  "id":1,
+  "username": "nikhil",
   "email": "nikhil@gmail.com",
-  "password": "richard_567",
+  "password": "richard_567"
 } 
 
 ### 
@@ -14,6 +14,6 @@ POST http://localhost:3000/login
 Content-type:application/json 
 
 {
-  "username": "adam_richardd",
+  "username": "nikhil",
   "password": "richard_567"
 }
