@@ -1,9 +1,14 @@
+GET http://localhost:3000/user
+
+
+### 
+
 POST http://localhost:3000/register
 Content-type:application/json 
 
 {
-  "id":1,
-  "username": "nikhil",
+  
+  "username": "sonu",
   "email": "nikhil@gmail.com",
   "password": "richard_567"
 } 
@@ -14,6 +19,6 @@ POST http://localhost:3000/login
 Content-type:application/json 
 
 {
-  "username": "nikhil",
+  "username": "sonu",
   "password": "richard_567"
 }

@@ -26,7 +26,7 @@ const initialize = async () => {
 initialize();
 
 app.post('/register', async (request, response) => {
-  const { id, username, email, password } = request.body;
+  const {username, email, password } = request.body;
   const createUserQuery = `select * from userData where username = '${username}';`;
   const hashedpassword = await bcrypt.hash(password, 10);
   const dbuser = await db.get(createUserQuery);
@@ -35,9 +35,8 @@ app.post('/register', async (request, response) => {
       response.status(400);
       response.send('Password is too short');
     } else {
-      const userQuery = `insert into userData (id,username,email,password)
+      const userQuery = `insert into userData (username,email,password)
                         values(
-                            '${id}',
                             '${username}',
                             '${email}',
                             '${hashedpassword}'
@@ -70,6 +69,13 @@ app.post('/login', async (request, response) => {
     }
   }
 });
+
+app.get("/user",async (request,response)=>{
+  const query = `select * from userData` 
+  const userDetails = await db.all(query) 
+  response.send(userDetails)
+})
+
 
 app.put('/change-password', async (request, response) => {
   const { username, oldPassword, newPassword } = request.body;
