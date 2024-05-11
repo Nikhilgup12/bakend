@@ -1,21 +1,21 @@
-GET http://localhost:3000/user
+GET https://organic-react-login-app-deploy.onrender.com/user
 
 
 ### 
 
-POST http://localhost:3000/register
+POST https://organic-react-login-app-deploy.onrender.com/register
 Content-type:application/json 
 
 {
   
-  "username": "sonu",
+  "username": "ankita",
   "email": "nikhil@gmail.com",
   "password": "richard_567"
 } 
 
 ### 
 
-POST http://localhost:3000/login
+POST https://organic-react-login-app-deploy.onrender.com/login
 Content-type:application/json 
 
 {
