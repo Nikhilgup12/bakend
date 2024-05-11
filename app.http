@@ -1,9 +1,8 @@
-GET https://organic-react-login-app-deploy.onrender.com/user
-
+GET https://localhost:3000/user
 
 ### 
 
-POST https://organic-react-login-app-deploy.onrender.com/register
+POST https://localhost:3000/register
 Content-type:application/json 
 
 {
@@ -15,7 +14,7 @@ Content-type:application/json
 
 ### 
 
-POST https://organic-react-login-app-deploy.onrender.com/login
+POST https://localhost:3000/login
 Content-type:application/json 
 
 {
