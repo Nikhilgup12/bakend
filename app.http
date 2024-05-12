@@ -1,8 +1,8 @@
-GET https://localhost:3000/user
+GET http://localhost:3000/user
 
 ### 
 
-POST https://localhost:3000/register
+POST http://localhost:3000/register
 Content-type:application/json 
 
 {
@@ -14,7 +14,7 @@ Content-type:application/json
 
 ### 
 
-POST https://localhost:3000/login
+POST http://localhost:3000/login
 Content-type:application/json 
 
 {
