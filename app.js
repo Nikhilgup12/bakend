@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const dbpath = path.join(__dirname, 'userData.db');
 const app = express();
 const cors = require('cors');
+const jwt = require("jsonwebtoken");
 app.use(cors());
 app.use(express.json());
 let db = null;
@@ -34,7 +35,6 @@ app.post('/register', async (request, response) => {
     if (password.length < 5) {
       response.status(400);
       response.send({message:'Password is too short'})
-      response.send('');
     } else {
       const userQuery = `insert into userData (username,email,password)
                         values(
@@ -59,12 +59,15 @@ app.post('/login', async (request, response) => {
   if (dbuser === undefined) {
     response.status(400);
     response.send({message:'Invalid user'})
- 
   } else {
     const isPasswordmatched = await bcrypt.compare(password, dbuser.password);
     if (isPasswordmatched === true) {
+      const payload = {
+        username: username,
+      };
+      const jwtToken = jwt.sign(payload, "MY_SECRET_TOKEN");
       response.status(200);
-      response.send({message:'Login success!'})
+      response.send({ jwtToken });
     } else {
       response.status(400);
       response.send({message:'Invalid password'})
@@ -77,7 +80,6 @@ app.get("/user",async (request,response)=>{
   const userDetails = await db.all(query) 
   response.send(userDetails)
 })
-
 
 app.put('/change-password', async (request, response) => {
   const { username, oldPassword, newPassword } = request.body;
