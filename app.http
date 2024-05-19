@@ -2,7 +2,7 @@ GET http://localhost:3000/user
 
 ### 
 
-POST http://localhost:3000/register
+POST https://react-login-deploy-app.onrender.com/register
 Content-type:application/json 
 
 {
@@ -14,13 +14,15 @@ Content-type:application/json
 
 ### 
 
-POST http://localhost:3000/login
+POST https://react-login-deploy-app.onrender.com/login
 Content-type:application/json 
 
 {
   "username": "sonu",
   "password": "richard_567"
 }
+
+
 
 
 
