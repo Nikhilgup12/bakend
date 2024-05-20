@@ -3,7 +3,7 @@ const path = require('path');
 const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 const bcrypt = require('bcrypt');
-const dbpath = path.join(__dirname, 'userData.db');
+const dbpath = path.join(__dirname, 'productData.db');
 const app = express();
 const cors = require('cors');
 const jwt = require("jsonwebtoken");
@@ -106,6 +106,55 @@ app.put('/change-password', async (request, response) => {
       response.send({message:'Invalid current password'})
     }
   }
+});
+
+
+app.post("/product", async (request, response) => {
+  const { array } = request.body;
+
+  array.map(async (image) => {
+    const { id, name, price, category, imageUrl} = image
+    const insertImageQuery = `
+        INSERT INTO product (id, name, price, category, image_url)
+        VALUES (
+          ${id},
+          '${name}',
+          ${price},
+          '${category}',
+          '${imageUrl}'
+        )
+      `;
+    await db.run(insertImageQuery);
+  });
+
+  response.send("Images Successfully Added");
+});
+
+app.get("/all-products",async (request,response)=>{
+  const query = `select * from product`
+  const details = await db.all(query) 
+  response.send(details)
+})
+
+app.get("/everything",async (request,response)=>{
+  const query = `select * from product where category='Everything'`;
+  const everything = await db.all(query) 
+  response.send(everything)
+
+});
+
+app.get("/groceries",async (request,response)=>{
+  const query = `select * from product where category='Groceries'`;
+  const everything = await db.all(query) 
+  response.send(everything)
+
+});
+
+app.get("/juices",async (request,response)=>{
+  const query = `select * from product where category='Juice'`;
+  const everything = await db.all(query) 
+  response.send(everything)
+
 });
 
 module.exports = app;
