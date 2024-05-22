@@ -108,10 +108,8 @@ app.put('/change-password', async (request, response) => {
   }
 });
 
-
 app.post("/product", async (request, response) => {
   const { array } = request.body;
-
   array.map(async (image) => {
     const { id, name, price, category, imageUrl} = image
     const insertImageQuery = `
@@ -130,6 +128,20 @@ app.post("/product", async (request, response) => {
   response.send("Images Successfully Added");
 });
 
+app.put('/update/:id', async (request, response) => {
+  const { id } = request.params;
+  const { name } = request.body;
+
+  const updateUserQuery = `
+    UPDATE product
+    SET name = '${name}'
+    WHERE id = ${id};
+  `;
+  await db.run(updateUserQuery);
+  response.send("Update Successfully");
+});
+
+
 app.get("/all-products",async (request,response)=>{
   const query = `select * from product`
   const details = await db.all(query) 
@@ -137,7 +149,9 @@ app.get("/all-products",async (request,response)=>{
 })
 
 app.get("/everything",async (request,response)=>{
-  const query = `select * from product where category='Everything'`;
+  const {title,order_by="price",order="ASC"}= request.query 
+  const query = `select * from product where category='Everything and name like'${title}'
+                  order by ${order_by} ${order} `;
   const everything = await db.all(query) 
   response.send(everything)
 

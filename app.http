@@ -46,7 +46,7 @@ Content-type: application/json
     },
     {
         "id": 3,
-        "name": "Diabetic-Cookies",
+        "name": "Diabetic Cookies",
         "price":55,
         "category":"Everything",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694882276/diabetic-cookies-300x300_jhwfhu.jpg"
@@ -60,14 +60,14 @@ Content-type: application/json
     },
      {
         "id": 5,
-        "name": "Organic-Honey",
+        "name": "Organic Honey",
         "price":15,
         "category":"Everything",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694882266/organic-honey-300x300_pjmy8j.jpg"
     },
      {
         "id": 6,
-        "name": "Orange-Juice",
+        "name": "Orange Juice",
         "price":50,
         "category":"Everything",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694103677/orage-juice-kariz-300x300_czruj2.jpg"
@@ -81,14 +81,14 @@ Content-type: application/json
     },
      {
         "id": 8,
-        "name": "Red-Chillies",
+        "name": "Red Chillies",
         "price":65,
         "category":"Everything",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694082845/red-chillies-300x300_kuidn3.jpg"
     },
      {
         "id": 9,
-        "name": "Edible-Oil",
+        "name": "Edible Oil",
         "price":48,
         "category":"Everything",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694082857/edible-oil-300x300_rhgu45.jpg"
@@ -137,42 +137,42 @@ Content-type: application/json
     },
      {
         "id": 16,
-        "name": "Red-Chillies",
+        "name": "Red Chillies",
         "price":65,
         "category":"Groceries",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694082845/red-chillies-300x300_kuidn3.jpg"
     },
      {
         "id": 17,
-        "name": "Edible-Oil",
+        "name": "Edible Oil",
         "price":48,
         "category":"Groceries",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694082857/edible-oil-300x300_rhgu45.jpg"
     },
      {
         "id":18,
-        "name": "Orange-Juice",
+        "name": "Orange Juice",
         "price":50,
         "category":"Groceries",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694103677/orage-juice-kariz-300x300_czruj2.jpg"
     },
      {
         "id": 19,
-        "name": "Organic-Products",
+        "name": "Organic Products",
         "price":55,
         "category":"Groceries",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694075012/organic-products-hero_qiwhzk.png"
     },
      {
         "id": 20,
-        "name": "Superfoods-Seeds",
+        "name": "Superfoods Seeds",
         "price":65,
         "category":"Groceries",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694926652/superfoods-seeds-grains-vegan-vegetarian-eating-clean-eating_114579-3939.jpg_a6y2ic.jpg"
     },
      {
         "id":21,
-        "name": "organic-fresh-vegetables",
+        "name": "organic fresh vegetables",
         "price":48,
         "category":"Groceries",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694926598/organic-fresh-vegetables-white-background-flat-lay_169016-23150.jpg_gjjlvi.jpg"
@@ -186,56 +186,56 @@ Content-type: application/json
     },
      {
         "id": 23,
-        "name": "Fresh-Carrots",
+        "name": "Fresh Carrots",
         "price":60,
         "category":"Groceries",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694927049/fresh-carrots_144627-12034.jpg_v23koi.jpg"
     },
      {
         "id":24,
-        "name": "Fresh-Organic-Apricots",
+        "name": "Fresh Organic Apricots",
         "price":75,
         "category":"Groceries",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694927286/fresh-organic-apricots-summer-fruit-top-view_114579-20591.jpg_xiafmp.jpg"
     },
     {
         "id":25,
-        "name": "Fruit-Juices",
+        "name": "Fruit Juices",
         "price":35,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694928072/variety-fruit-juices-fruit-smoothies_434193-3528.jpg_o923tp.jpg"
     },
     {
         "id":26,
-        "name": "Glass-Orange-Juice",
+        "name": "Glass Orange Juice",
         "price":45,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694928053/glass-orange-juice-placed-wood_1150-9666.jpg_qdlz6b.jpg"
     },
     {
         "id": 27,
-        "name": "Milkshake-Glasses",
+        "name": "Milkshake Glasses",
         "price":55,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694928032/selection-milkshake-glasses-with-fruits-chocolate_23-2148707758.jpg_mwax8l.jpg"
     },
      {
         "id":28,
-        "name": "Milk-Juice",
+        "name": "Milk Juice",
         "price":65,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694927995/fruit-juice-milk_74190-2131.jpg_e0wrai.jpg"
     },
      {
         "id":29,
-        "name": "Banana-Milkshake",
+        "name": "Banana Milkshake",
         "price":48,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694927966/delicious-banana-milkshake_144627-27492.jpg_kyfgk7.jpg"
     },
      {
         "id":30,
-        "name": "Orange-Juice",
+        "name": "Orange Juice",
         "price":50,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694103677/orage-juice-kariz-300x300_czruj2.jpg"
@@ -249,35 +249,35 @@ Content-type: application/json
     },
      {
         "id":32,
-        "name": "Two-Glasses-Tarragon-Juice",
+        "name": "Tarragon Juice",
         "price":65,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694927903/two-glasses-tarragon-juice-marble_114579-60393.jpg_mcxjjn.jpg"
     },
      {
         "id":33,
-        "name": "Citrus-Juice",
+        "name": "Citrus Juice",
         "price":48,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694927873/citrus-juice-with-peppermint-umbrella_23-2148145314.jpg_ipf1nj.jpg"
     },
      {
         "id":34,
-        "name": "Fruits-Cocktail",
+        "name": "Fruits Cocktail",
         "price":39,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694927868/fruit-filled-cocktail-with-citrus-mint-ice-generative-ai_188544-12381.jpg_d5h32j.jpg"
     },
      {
         "id":35,
-        "name": "Cold-Watermelon",
+        "name": "Cold Watermelon",
         "price":60,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694927834/cold-watermelon-smoothie-dark-background_1150-41818.jpg_ojzpnf.jpg"
     },
      {
         "id":36,
-        "name": "smoothies-Juice",
+        "name": "smoothies Juice",
         "price":75,
         "category":"Juice",
         "imageUrl": "https://res.cloudinary.com/di9qg5ka6/image/upload/v1694928068/smoothies-banana-orange-ginger-smoothies-healthy-drinks-top-view-black-background_187166-65835.jpg_zbw1yv.jpg"
@@ -287,11 +287,20 @@ Content-type: application/json
 
 ### 
 
+PUT http://localhost:3000/update/36
+Content-type: application/json
+
+{
+    "name":"smoothies Juice"
+}
+
+### 
+
 GET http://localhost:3000/all-products 
 
 ### 
 
-GET http://localhost:3000/everything
+GET http://localhost:3000/everything/?title=Organic
 
 ###
 
@@ -300,35 +309,5 @@ GET http://localhost:3000/groceries
 ### 
 
 GET http://localhost:3000/juices
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
