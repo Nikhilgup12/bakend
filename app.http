@@ -300,14 +300,15 @@ GET http://localhost:3000/all-products
 
 ### 
 
-GET http://localhost:3000/everything/?title=Organic
+### Search and Sort in Everything
+GET http://localhost:3000/everything?title=&sort_by=
 
 ###
 
-GET http://localhost:3000/groceries 
+GET http://localhost:3000/groceries?title=&sort_by=
 
 ### 
 
-GET http://localhost:3000/juices
+GET http://localhost:3000/juices?title=&sort_by=
 
 

@@ -148,24 +148,65 @@ app.get("/all-products",async (request,response)=>{
   response.send(details)
 })
 
-app.get("/everything",async (request,response)=>{
-  const {title,order_by="price",order="ASC"}= request.query 
-  const query = `select * from product where category='Everything and name like'${title}'
-                  order by ${order_by} ${order} `;
-  const everything = await db.all(query) 
-  response.send(everything)
+app.get("/everything", async (request, response) => {
+  const { title = "", sort_by = "" } = request.query;
 
+  let query = `SELECT * FROM product WHERE category = 'Everything'`;
+
+  if (title) {
+    query += ` AND name LIKE '%${title}%'`;
+  }
+
+  // Apply default sorting if no sorting option is provided
+  if (sort_by === "high_to_low") {
+    query += ` ORDER BY price DESC`;
+  } else {
+    query += ` ORDER BY price ASC`;
+  }
+  
+  // Execute the SQL query and send the response
+  const everything = await db.all(query);
+  response.send(everything);
 });
 
+
 app.get("/groceries",async (request,response)=>{
-  const query = `select * from product where category='Groceries'`;
+  const { title = "", sort_by = "" } = request.query;
+
+  let query = `select * from product where category='Groceries'`;
+
+  if (title) {
+    query += ` AND name LIKE '%${title}%'`;
+  }
+
+  // Apply default sorting if no sorting option is provided
+  if (sort_by === "high_to_low") {
+    query += ` ORDER BY price DESC`;
+  } else {
+    query += ` ORDER BY price ASC`;
+  }
+
   const everything = await db.all(query) 
   response.send(everything)
 
 });
 
 app.get("/juices",async (request,response)=>{
-  const query = `select * from product where category='Juice'`;
+  const { title = "", sort_by = "" } = request.query;
+  
+  let query = `select * from product where category='Juice'`;
+
+  if (title) {
+    query += ` AND name LIKE '%${title}%'`;
+  }
+
+  // Apply default sorting if no sorting option is provided
+  if (sort_by === "high_to_low") {
+    query += ` ORDER BY price DESC`;
+  } else {
+    query += ` ORDER BY price ASC`;
+  }
+  
   const everything = await db.all(query) 
   response.send(everything)
 
