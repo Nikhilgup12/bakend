@@ -3,18 +3,26 @@ const path = require('path');
 const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 const bcrypt = require('bcrypt');
-const dbpath = path.join(__dirname, 'productData.db');
+const dbpath1 = path.join(__dirname, "userData.db");
+const dbpath2 = path.join(__dirname, 'productData.db');
 const app = express();
 const cors = require('cors');
 const jwt = require("jsonwebtoken");
 app.use(cors());
 app.use(express.json());
 let db = null;
+let database = null;
 const initialize = async () => {
   try {
     db = await open({
-      filename: dbpath,
-      driver: sqlite3.Database
+      filename: dbpath2,
+      driver: sqlite3.Database,
+    });
+
+    // Connect onother database file and assign the database to the variable database
+    database = await open({
+      filename: dbpath1,
+      driver: sqlite3.Database,
     });
     app.listen(3000, () => {
       console.log('Server is start!!!');
@@ -30,7 +38,7 @@ app.post('/register', async (request, response) => {
   const {username, email, password } = request.body;
   const createUserQuery = `select * from userData where username = '${username}';`;
   const hashedpassword = await bcrypt.hash(password, 10);
-  const dbuser = await db.get(createUserQuery);
+  const dbuser = await database.get(createUserQuery);
   if (dbuser === undefined) {
     if (password.length < 5) {
       response.status(400);
@@ -42,7 +50,7 @@ app.post('/register', async (request, response) => {
                             '${email}',
                             '${hashedpassword}'
                         );`;
-      await db.run(userQuery);
+      await database.run(userQuery);
       response.status(200);
       response.send({message:'User created successfully'})
     }
@@ -55,7 +63,7 @@ app.post('/register', async (request, response) => {
 app.post('/login', async (request, response) => {
   const { username, password } = request.body;
   const selectUserQuery = `select * from userData where username = '${username}';`;
-  const dbuser = await db.get(selectUserQuery);
+  const dbuser = await database.get(selectUserQuery);
   if (dbuser === undefined) {
     response.status(400);
     response.send({message:'Invalid user'})
@@ -77,14 +85,14 @@ app.post('/login', async (request, response) => {
 
 app.get("/user",async (request,response)=>{
   const query = `select * from userData` 
-  const userDetails = await db.all(query) 
+  const userDetails = await database.all(query) 
   response.send(userDetails)
 })
 
 app.put('/change-password', async (request, response) => {
   const { username, oldPassword, newPassword } = request.body;
   const selectUserQuery = `select * from userData where username ='${username}';`;
-  const dbuser = await db.get(selectUserQuery);
+  const dbuser = await database.get(selectUserQuery);
   if (dbuser === undefined) {
     response.status(400);
     response.send({message:'User not Regeister'})
@@ -97,7 +105,7 @@ app.put('/change-password', async (request, response) => {
       } else {
         const hasPassword = await bcrypt.hash(newPassword, 10);
         const updatePassword = `update userData set password = '${hasPassword}' where username ='${username}';`;
-        await db.run(updatePassword);
+        await database.run(updatePassword);
         response.status(200);
         response.send({message:'Password updated'})
       }
