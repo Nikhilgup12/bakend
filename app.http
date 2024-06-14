@@ -298,7 +298,6 @@ Content-type: application/json
 
 GET http://localhost:3000/all-products 
 
-### 
 
 ### Search and Sort in Everything
 GET http://localhost:3000/everything?title=&sort_by=
